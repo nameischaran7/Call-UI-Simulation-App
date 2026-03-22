@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D1117"
+    android:padding="20dp">
+
+    <!-- Number Display -->
+    <TextView
+        android:id="@+id/numberDisplay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#FFFFFF"
+        android:textSize="32sp"
+        android:gravity="center"
+        android:letterSpacing="0.1"
+        android:padding="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Dial Pad -->
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="4"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/numberDisplay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Stylish Buttons -->
+        <Button style="@style/DialButton" android:text="1"/>
+        <Button style="@style/DialButton" android:text="2"/>
+        <Button style="@style/DialButton" android:text="3"/>
+
+        <Button style="@style/DialButton" android:text="4"/>
+        <Button style="@style/DialButton" android:text="5"/>
+        <Button style="@style/DialButton" android:text="6"/>
+
+        <Button style="@style/DialButton" android:text="7"/>
+        <Button style="@style/DialButton" android:text="8"/>
+        <Button style="@style/DialButton" android:text="9"/>
+
+        <Button style="@style/DialButton" android:text="*"/>
+        <Button style="@style/DialButton" android:text="0"/>
+        <Button style="@style/DialButton" android:text="#"/>
+
+    </GridLayout>
+
+    <!-- Bottom Controls -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="25dp"
+        app:layout_constraintTop_toBottomOf="@id/gridLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Backspace -->
+        <ImageButton
+            android:id="@+id/backspaceBtn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/circle_dark"
+            android:src="@android:drawable/ic_input_delete"
+            android:layout_marginEnd="20dp"
+            app:tint="#FFFFFF" />
+
+        <!-- Call Button -->
+        <ImageButton
+            android:id="@+id/callBtn"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/circle_green"
+            android:src="@android:drawable/ic_menu_call"
+            android:layout_marginEnd="20dp"
+            app:tint="#FFFFFF" />
+
+        <!-- 🔥 Simulate Incoming Call -->
+        <Button
+            android:id="@+id/fakeIncomingBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="Simulate"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#444444"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
